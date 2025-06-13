@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="mystyle.css" />
-		<title>image3d v2.0.0</title>
+		<title>image3d v2.0.1</title>
 	</head>	
 	<body>
 		f (Hz)
@@ -188,7 +188,7 @@ function handleImageUpload(event) {
         const reader = new FileReader();
         reader.onload = function (e) {
 			image3d.material.map = new THREE.TextureLoader().load(e.target.result, function (texture){
-				image3d.geometry = new THREE.PlaneGeometry(texture.image.width,texture.image.height,texture.image.width,texture.image.height);
+				image3d.geometry = new THREE.PlaneGeometry(texture.image.width,texture.image.height,336,504);
 				image3d.geometry.verticesNeedUpdate = true;
 			});
 			image3d.material.map.needsUpdate = true;
